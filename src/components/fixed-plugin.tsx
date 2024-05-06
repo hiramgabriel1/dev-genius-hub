@@ -5,6 +5,7 @@ import { Button } from "@material-tailwind/react";
 export function FixedPlugin() {
   return (
     <a href="https://www.material-tailwind.com" target="_blank">
+          {/* @ts-ignore */}
       <Button
         color="white"
         size="sm"
