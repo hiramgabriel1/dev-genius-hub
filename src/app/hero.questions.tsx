@@ -1,8 +1,13 @@
 /* eslint-disable react/no-children-prop */
 "use client";
 import { Button, Typography, Input } from "@material-tailwind/react";
+import { useState } from "react";
 
 function HeroQuestions() {
+    const [question, setQuestion] = useState('')
+    const handleQuestionAI = async () => {
+
+    }
     return (
         <header className="mt-5 bg-white p-8">
             <div className="w-w-full container mx-auto pt-12 pb-24 text-center">
@@ -32,12 +37,13 @@ function HeroQuestions() {
                     <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
                         <div className="w-80">
                             {/* @ts-ignore */}
-                            <Input label="Comienza preguntandome algo..." />
+                            <Input onChange={(e: Event) => setQuestion(e.target.value)} label="Comienza preguntandome algo..." />
                         </div>
 
                         {/* @ts-ignore */}
                         <Button
                             // @ts-ignore
+                            onClick={handleQuestionAI}
                             size="md"
                             className="lg:w-max shrink-0"
                             fullWidth
@@ -47,7 +53,7 @@ function HeroQuestions() {
                             onPointerEnterCapture={undefined}
                             onPointerLeaveCapture={undefined}
                         >
-                            Comenzar
+                            Preguntar
                         </Button>
                     </div>
                 </div>

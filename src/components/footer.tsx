@@ -13,12 +13,12 @@ const LINKS = ["Company", "About Us", "Team", "Products", "Blog"];
 export function Footer() {
   const [email, setEmail] = useState("");
 
-  const getEmailUser = (e: Event) => {
-    // @ts-ignore
-    const email = e.target.value;
+  // const getEmailUser = (e: Event) => {
+  //   // @ts-ignore
+  //   const email = e.target.value;
 
-    setEmail(email);
-  };
+  //   setEmail(email);
+  // };
 
   const saveEmailNewsLatter = async () => {
     toast.error("Hola, aún sigo trabajando en lo de los emails xd");
@@ -49,7 +49,7 @@ export function Footer() {
               {/* @ts-ignore */}
               <Input
                 // @ts-ignore
-                onInput={getEmailUser}
+                onChange={(e: Event) => setEmail(e.target.value)}
                 label="Email"
                 color="white"
               />
