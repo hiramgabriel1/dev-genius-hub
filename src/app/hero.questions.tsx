@@ -4,10 +4,10 @@ import { Button, Typography, Input } from "@material-tailwind/react";
 import { useState } from "react";
 
 function HeroQuestions() {
-    const [question, setQuestion] = useState('')
+    const [question, setQuestion] = useState("");
     const handleQuestionAI = async () => {
-
-    }
+        console.log(question);
+    };
     return (
         <header className="mt-5 bg-white p-8">
             <div className="w-w-full container mx-auto pt-12 pb-24 text-center">
@@ -20,7 +20,7 @@ function HeroQuestions() {
                     onPointerEnterCapture={undefined}
                     onPointerLeaveCapture={undefined}
                 >
-                    No tienes idea de como comenzar en programacion?
+                    ¿No tienes idea de como comenzar en programacion?
                 </Typography>
                 <Typography
                     // @ts-expect-error
@@ -37,7 +37,11 @@ function HeroQuestions() {
                     <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
                         <div className="w-80">
                             {/* @ts-ignore */}
-                            <Input onChange={(e: Event) => setQuestion(e.target.value)} label="Comienza preguntandome algo..." />
+                            <Input
+                                //   @ts-ignore
+                                onChange={(e: Event) => setQuestion(e.target.value)}
+                                label="Comienza preguntandome algo..."
+                            />
                         </div>
 
                         {/* @ts-ignore */}
