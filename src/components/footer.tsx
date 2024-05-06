@@ -19,7 +19,7 @@ export function Footer() {
             className="text-2xl md:text-3xl text-center font-bold "
             color="white"
           >
-            Join our community!
+            Unete a la Comunidad!
           </Typography>
             {/* @ts-ignore */}
       
@@ -27,8 +27,7 @@ export function Footer() {
             color="white"
             className=" md:w-7/12 text-center my-3 !text-base"
           >
-            Get news in your inbox every week! We hate spam too, so no worries
-            about this.
+            Obten notificaciones diarias sobre nuevos posts desde tu correo
           </Typography>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
             <div className="w-80">
@@ -38,7 +37,7 @@ export function Footer() {
             {/* @ts-ignore */}
       
             <Button size="md" className="lg:w-32" fullWidth color="white">
-              subscribe
+              Suscribir
             </Button>
           </div>
         </div>

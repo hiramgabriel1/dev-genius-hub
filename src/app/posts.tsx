@@ -11,13 +11,14 @@ import {
 import { ArrowSmallDownIcon } from "@heroicons/react/24/solid";
 import BlogPostCard from "@/components/blog-post-card";
 
+const dateNow = new Date().getDay()
 const POSTS = [
   {
     img: `/image/blogs/blog2.svg`,
     tag: "Enterprise",
     title: "The key new features and changes in Tailwind CSS",
     desc: "Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens bed design but the back is too high for the beams and angle of the ceiling I also wanted to point out.",
-    date: "10 September 2022",
+    date: dateNow.toString(),
     author: {
       img: `/image/avatar1.jpg`,
       name: "Ryan Samuel",
