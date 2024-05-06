@@ -12,6 +12,8 @@ import {
   CommandLineIcon,
   XMarkIcon,
   Bars3Icon,
+  QueueListIcon,
+  QuestionMarkCircleIcon,
 } from "@heroicons/react/24/solid";
 
 const NAV_MENU = [
@@ -23,6 +25,11 @@ const NAV_MENU = [
     name: "Docs",
     icon: CommandLineIcon,
     href: "",
+  },
+  {
+    name: "AI",
+    icon: QuestionMarkCircleIcon,
+    href: "/questions",
   },
 ];
 
@@ -94,12 +101,12 @@ export function Navbar() {
           {/* @ts-ignore */}
           <Button variant="text">Acerca de</Button>
           <a href="#">
-          {/* @ts-ignore */}
-           
+            {/* @ts-ignore */}
+
             <Button color="gray">blocks</Button>
           </a>
         </div>
-          {/* @ts-ignore */}
+        {/* @ts-ignore */}
 
         <IconButton
           variant="text"
