@@ -12,7 +12,6 @@ export default function Campaign() {
       <Navbar />
       <Hero />
       <Posts />
-      {/* <Articles /> */}
       <Footer />
     </>
   );
