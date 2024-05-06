@@ -93,7 +93,7 @@ export function Navbar() {
         <div className="hidden items-center gap-2 lg:flex">
           {/* @ts-ignore */}
           <Button variant="text">Acerca de</Button>
-          <a href="https://www.material-tailwind.com/blocks" target="_blank">
+          <a href="#">
           {/* @ts-ignore */}
            
             <Button color="gray">blocks</Button>
