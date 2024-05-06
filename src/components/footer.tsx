@@ -4,25 +4,30 @@ import {
   Input,
   Button,
 } from "@material-tailwind/react";
+import toast, { Toaster } from "react-hot-toast";
 
 const CURRENT_YEAR = new Date().getFullYear();
 const LINKS = ["Company", "About Us", "Team", "Products", "Blog"];
+
+const saveEmailNewsLatter = async () => {
+  toast.error("Hola, aun sigo trabajando en lo de los emails xd");
+};
 
 export function Footer() {
   return (
     <footer className="pb-5 p-10 md:pt-10">
       <div className="container flex flex-col mx-auto">
         <div className="flex !w-full py-10 mb-5 md:mb-20 flex-col justify-center !items-center bg-gray-900 container max-w-6xl mx-auto rounded-2xl p-5 ">
-            {/* @ts-ignore */}
-      
+          {/* @ts-ignore */}
+
           <Typography
             className="text-2xl md:text-3xl text-center font-bold "
             color="white"
           >
             Unete a la Comunidad!
           </Typography>
-            {/* @ts-ignore */}
-      
+          {/* @ts-ignore */}
+
           <Typography
             color="white"
             className=" md:w-7/12 text-center my-3 !text-base"
@@ -33,17 +38,24 @@ export function Footer() {
             <div className="w-80">
               {/* @ts-ignore */}
               <Input label="Email" color="white" />
+              <Toaster />
             </div>
             {/* @ts-ignore */}
-      
-            <Button size="md" className="lg:w-32" fullWidth color="white">
+
+            <Button
+              onClick={saveEmailNewsLatter}
+              size="md"
+              className="lg:w-32"
+              fullWidth
+              color="white"
+            >
               Suscribir
             </Button>
           </div>
         </div>
         <div className="flex flex-col md:flex-row items-center !justify-between">
-            {/* @ts-ignore */}
-      
+          {/* @ts-ignore */}
+
           <Typography
             as="a"
             href="https://www.material-tailwind.com"
@@ -92,14 +104,13 @@ export function Footer() {
             </IconButton>
           </div>
         </div>
-            {/* @ts-ignore */}
+        {/* @ts-ignore */}
 
         <Typography
           color="blue-gray"
           className="text-center mt-12 font-normal !text-gray-700"
         >
           &copy; {CURRENT_YEAR} Created By{" "}
-          
           <a href="https://www.creative-tim.com" target="_blank">
             @hiram.dev
           </a>
