@@ -52,7 +52,7 @@ export function Footer() {
             variant="h6"
             className="text-gray-900"
           >
-            Material Tailwind
+            Dev Genius Hub
           </Typography>
           <ul className="flex justify-center my-4 md:my-0 w-max mx-auto items-center gap-4">
             {LINKS.map((link, index) => (
@@ -99,13 +99,10 @@ export function Footer() {
           color="blue-gray"
           className="text-center mt-12 font-normal !text-gray-700"
         >
-          &copy; {CURRENT_YEAR} Made with{" "}
-          <a href="https://www.material-tailwind.com" target="_blank">
-            Material Tailwind
-          </a>{" "}
-          by{" "}
+          &copy; {CURRENT_YEAR} Created By{" "}
+          
           <a href="https://www.creative-tim.com" target="_blank">
-            Creative Tim
+            @hiram.dev
           </a>
           .
         </Typography>

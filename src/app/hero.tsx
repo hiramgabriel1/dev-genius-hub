@@ -12,36 +12,35 @@ function Hero() {
       // @ts-expect-error
           color="blue-gray"
           className="mx-auto w-full text-[30px] lg:text-[48px] font-bold leading-[45px] lg:leading-[60px] lg:max-w-2xl" children={undefined} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}      >
-        Web Development Blog @ Material Tailwind
+       Haciendo que la programación sea accesible para todos, una respuesta a la vez
       </Typography>
       <Typography
       // @ts-expect-error
           variant="lead"
           className="mx-auto mt-8 mb-4 w-full px-8 !text-gray-700 lg:w-10/12 lg:px-12 xl:w-8/12 xl:px-20" children={undefined} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}      >
-        Expand your web development knowledge with our tutorials and
-        learning articles.
+       Impulsado 100% con Inteligencia Artificial
       </Typography>
       <div className="grid place-items-start justify-center gap-2">
         <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
           <div className="w-80">
             {/* @ts-ignore */}
-            <Input label="name@creative-tim.com" />
+            <Input label="name@gmail.com" />
           </div>
 
     {/* @ts-ignore */}
           <Button size="md" className="lg:w-max shrink-0" fullWidth color="gray" children={undefined} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-            get started
+            Comenzar
           </Button>
         </div>
         <div className="flex items-center gap-1">
     {/* @ts-ignore */}
           <Typography variant="small" className="font-normal text-gray-700" children={undefined} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-            See our{" "}
+            Ver los{" "}
             <a
               href="#"
               className="hover:text-gray-900 transition-colors underline"
             >
-              Terms and Conditions
+              Terminos y Condiciones de uso
             </a>
           </Typography>
         </div>

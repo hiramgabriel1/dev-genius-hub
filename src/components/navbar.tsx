@@ -16,12 +16,8 @@ import {
 
 const NAV_MENU = [
   {
-    name: "Page",
+    name: "Inicio",
     icon: RectangleStackIcon,
-  },
-  {
-    name: "Account",
-    icon: UserCircleIcon,
   },
   {
     name: "Docs",
@@ -84,7 +80,7 @@ export function Navbar() {
           color="blue-gray"
           className="text-lg font-bold"
         >
-          Material Tailwind
+          Dev Genius Hub
         </Typography>
         <ul className="ml-10 hidden items-center gap-8 lg:flex">
           {NAV_MENU.map(({ name, icon: Icon, href }) => (
@@ -96,7 +92,7 @@ export function Navbar() {
         </ul>
         <div className="hidden items-center gap-2 lg:flex">
           {/* @ts-ignore */}
-          <Button variant="text">Sign In</Button>
+          <Button variant="text">Acerca de</Button>
           <a href="https://www.material-tailwind.com/blocks" target="_blank">
           {/* @ts-ignore */}
            

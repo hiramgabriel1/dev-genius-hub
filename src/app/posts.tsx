@@ -11,7 +11,6 @@ import {
 import { ArrowSmallDownIcon } from "@heroicons/react/24/solid";
 import BlogPostCard from "@/components/blog-post-card";
 
-
 const POSTS = [
   {
     img: `/image/blogs/blog2.svg`,
@@ -24,62 +23,12 @@ const POSTS = [
       name: "Ryan Samuel",
     },
   },
-  {
-    img: `/image/blogs/blog6.svg`,
-    tag: "Startups",
-    title: "Lyft launching cross-platform service this week",
-    desc: "Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens bed design but the back is too high for the beams and angle of the ceiling I also wanted to point out.",
-    date: "12 September 2022",
-    author: {
-      img: `/image/blogs/blog2.svg`,
-      name: "Nora Hazel",
-    },
-  },
-  {
-    img: `/image/blogs/blog3.svg`,
-    tag: "Trending",
-    title: "6 insights into the French Fashion landscape",
-    desc: "Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens bed design but the back is too high for the beams and angle of the ceiling I also wanted to point out.",
-    date: "16 September 2022",
-    author: {
-      img: `/image/avatar2.jpg`,
-      name: "Otto Gonzalez",
-    },
-  },
-  {
-    img: `/image/blogs/blog4.svg`,
-    tag: "Lifestyle",
-    title: "Autodesk looks to future of 3D printing with Project",
-    desc: "Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens bed design but the back is too high for the beams and angle of the ceiling I also wanted to point out.",
-    date: "18 September 2022",
-    author: {
-      img: `/image/avatar3.jpg`,
-      name: "Ryan Samuel",
-    },
-  },
-  {
-    img: `/image/blogs/blog5.svg`,
-    tag: "Enterprise",
-    title: "Autodesk looks to future of 3D printing with Project",
-    desc: "Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens bed design but the back is too high for the beams and angle of the ceiling I also wanted to point out.",
-    date: "10 September 2022",
-    author: {
-      img: `/image/avatar3.jpg`,
-      name: "Ryan Samuel",
-    },
-  },
-  {
-    img: `/image/blogs/blog6.svg`,
-    tag: "Startups",
-    title: "Lyft launching cross-platform service this week",
-    desc: "Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens bed design but the back is too high for the beams and angle of the ceiling I also wanted to point out.",
-    date: "12 September 2022",
-    author: {
-      img: `/image/avatar2.jpg`,
-      name: "Nora Hazel",
-    },
-  },
 ];
+
+const changeContent = async () => {
+  console.log('jdksdj');
+  
+}
 
 export function Posts() {
   return (
@@ -90,7 +39,7 @@ export function Posts() {
           <TabsHeader className="h-10 !w-12/12 md:w-[50rem] border border-white/25 bg-opacity-90">
           {/* @ts-ignore */}
 
-            <Tab value="trends">Trends</Tab>
+            <Tab value="trends" onClick={changeContent}>Diario</Tab>
           {/* @ts-ignore */}
 
             <Tab value="frontend">Frontend</Tab>
@@ -99,20 +48,17 @@ export function Posts() {
             <Tab value="backend">Backend</Tab>
           {/* @ts-ignore */}
 
-            <Tab value="cloud">Cloud</Tab>
+            <Tab value="ai">Tips</Tab>
           {/* @ts-ignore */}
 
-            <Tab value="ai">AI</Tab>
-          {/* @ts-ignore */}
-
-            <Tab value="tools">Tools</Tab>
+            <Tab value="tools">Ejemplos</Tab>
           </TabsHeader>
         </div>
       </Tabs>
           {/* @ts-ignore */}
 
       <Typography variant="h6" className="mb-2">
-        Latest Blog Posts
+        Explora los recientes posts
       </Typography>
           {/* @ts-ignore */}
 
