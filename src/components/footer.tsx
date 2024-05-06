@@ -13,11 +13,11 @@ const LINKS = ["Company", "About Us", "Team", "Products", "Blog"];
 export function Footer() {
   const [email, setEmail] = useState("");
 
-  const getEmailUser = (e:Event) => {
+  const getEmailUser = (e: Event) => {
     // @ts-ignore
-    const email = e.target.value
+    const email = e.target.value;
 
-    setEmail(email)
+    setEmail(email);
   };
 
   const saveEmailNewsLatter = async () => {
@@ -25,7 +25,6 @@ export function Footer() {
   };
 
   console.log(email);
-  
 
   return (
     <footer className="pb-5 p-10 md:pt-10">
@@ -49,6 +48,7 @@ export function Footer() {
             <div className="w-80">
               {/* @ts-ignore */}
               <Input
+                // @ts-ignore
                 onInput={getEmailUser}
                 label="Email"
                 color="white"
@@ -96,19 +96,25 @@ export function Footer() {
           </ul>
           <div className="flex w-fit justify-center gap-2">
             {/* @ts-ignore */}
-            <IconButton size="sm" color="gray" variant="text">
-              <i className="fa-brands fa-twitter text-lg" />
-            </IconButton>
-            {/* @ts-ignore */}
-            <IconButton size="sm" color="gray" variant="text">
-              <i className="fa-brands fa-youtube text-lg" />
-            </IconButton>
-            {/* @ts-ignore */}
-            <IconButton size="sm" color="gray" variant="text">
+            <IconButton
+              onClick={() => {
+                window.location.href = "https://instagram.com/hiram.dev";
+              }}
+              size="sm"
+              color="gray"
+              variant="text"
+            >
               <i className="fa-brands fa-instagram text-lg" />
             </IconButton>
             {/* @ts-ignore */}
-            <IconButton size="sm" color="gray" variant="text">
+            <IconButton
+              onClick={() => {
+                window.location.href = "https://github.com/itsrusty";
+              }}
+              size="sm"
+              color="gray"
+              variant="text"
+            >
               <i className="fa-brands fa-github text-lg" />
             </IconButton>
           </div>
