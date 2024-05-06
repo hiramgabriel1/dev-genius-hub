@@ -27,6 +27,11 @@ const POSTS = [
 
 const changeContent = async () => {
   console.log('jdksdj');
+
+}
+
+const showMorePosts = async () => {
+  console.log('show more posts');
   
 }
 
@@ -37,44 +42,42 @@ export function Posts() {
         <div className="w-full flex mb-8 flex-col items-center">
           {/* @ts-ignore */}
           <TabsHeader className="h-10 !w-12/12 md:w-[50rem] border border-white/25 bg-opacity-90">
-          {/* @ts-ignore */}
+            {/* @ts-ignore */}
 
             <Tab value="trends" onClick={changeContent}>Diario</Tab>
-          {/* @ts-ignore */}
+            {/* @ts-ignore */}
 
             <Tab value="frontend">Frontend</Tab>
-          {/* @ts-ignore */}
+            {/* @ts-ignore */}
 
             <Tab value="backend">Backend</Tab>
-          {/* @ts-ignore */}
+            {/* @ts-ignore */}
 
             <Tab value="ai">Tips</Tab>
-          {/* @ts-ignore */}
+            {/* @ts-ignore */}
 
             <Tab value="tools">Ejemplos</Tab>
           </TabsHeader>
         </div>
       </Tabs>
-          {/* @ts-ignore */}
+      {/* @ts-ignore */}
 
       <Typography variant="h6" className="mb-2">
         Explora los recientes posts
       </Typography>
-          {/* @ts-ignore */}
+      {/* @ts-ignore */}
 
       <Typography variant="h1" className="mb-2">
-        Trends News
+        Publicacion Diaria
       </Typography>
-          {/* @ts-ignore */}
 
+      {/* @ts-ignore */}
       <Typography
         variant="lead"
         color="gray"
         className="max-w-3xl mb-36 text-center text-gray-500"
       >
-        Check out what&apos;s new in the web development and tech worls! Do not
-        forget to subscribe to our blog and we will notify you with the latest
-        news.
+        Observa los nuevo posts de hoy creados 100% por inteligencia artificial
       </Typography>
       <div className="container my-auto grid grid-cols-1 gap-x-8 gap-y-16 items-start lg:grid-cols-3">
         {POSTS.map(({ img, tag, title, desc, date, author }) => (
@@ -92,16 +95,17 @@ export function Posts() {
           />
         ))}
       </div>
-          {/* @ts-ignore */}
+      {/* @ts-ignore */}
 
       <Button
         variant="text"
         size="lg"
         color="gray"
         className="flex items-center gap-2 mt-24"
+        onClick={showMorePosts}
       >
         <ArrowSmallDownIcon className="h-5 w-5 font-bold text-gray-900" />
-        VIEW MORE
+        Ver mas
       </Button>
     </section>
   );

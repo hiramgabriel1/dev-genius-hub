@@ -78,7 +78,7 @@ export function BlogPostCard({
               color="blue-gray"
               className="mb-0.5 !font-medium"
             >
-              {author.name}
+              {/* {author.name} */}
             </Typography>
           {/* @ts-ignore */}
 
