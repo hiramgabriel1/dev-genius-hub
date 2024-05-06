@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Typography,
   IconButton,
@@ -9,17 +10,28 @@ import toast, { Toaster } from "react-hot-toast";
 const CURRENT_YEAR = new Date().getFullYear();
 const LINKS = ["Company", "About Us", "Team", "Products", "Blog"];
 
-const saveEmailNewsLatter = async () => {
-  toast.error("Hola, aun sigo trabajando en lo de los emails xd");
-};
-
 export function Footer() {
+  const [email, setEmail] = useState("");
+
+  const getEmailUser = (e:Event) => {
+    // @ts-ignore
+    const email = e.target.value
+
+    setEmail(email)
+  };
+
+  const saveEmailNewsLatter = async () => {
+    toast.error("Hola, aún sigo trabajando en lo de los emails xd");
+  };
+
+  console.log(email);
+  
+
   return (
     <footer className="pb-5 p-10 md:pt-10">
       <div className="container flex flex-col mx-auto">
         <div className="flex !w-full py-10 mb-5 md:mb-20 flex-col justify-center !items-center bg-gray-900 container max-w-6xl mx-auto rounded-2xl p-5 ">
           {/* @ts-ignore */}
-
           <Typography
             className="text-2xl md:text-3xl text-center font-bold "
             color="white"
@@ -27,7 +39,6 @@ export function Footer() {
             Unete a la Comunidad!
           </Typography>
           {/* @ts-ignore */}
-
           <Typography
             color="white"
             className=" md:w-7/12 text-center my-3 !text-base"
@@ -37,11 +48,14 @@ export function Footer() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
             <div className="w-80">
               {/* @ts-ignore */}
-              <Input label="Email" color="white" />
+              <Input
+                onInput={getEmailUser}
+                label="Email"
+                color="white"
+              />
               <Toaster />
             </div>
             {/* @ts-ignore */}
-
             <Button
               onClick={saveEmailNewsLatter}
               size="md"
@@ -55,7 +69,6 @@ export function Footer() {
         </div>
         <div className="flex flex-col md:flex-row items-center !justify-between">
           {/* @ts-ignore */}
-
           <Typography
             as="a"
             href="https://www.material-tailwind.com"
@@ -69,7 +82,6 @@ export function Footer() {
             {LINKS.map((link, index) => (
               <li key={index}>
                 {/* @ts-ignore */}
-
                 <Typography
                   as="a"
                   href="#"
@@ -88,24 +100,20 @@ export function Footer() {
               <i className="fa-brands fa-twitter text-lg" />
             </IconButton>
             {/* @ts-ignore */}
-
             <IconButton size="sm" color="gray" variant="text">
               <i className="fa-brands fa-youtube text-lg" />
             </IconButton>
             {/* @ts-ignore */}
-
             <IconButton size="sm" color="gray" variant="text">
               <i className="fa-brands fa-instagram text-lg" />
             </IconButton>
             {/* @ts-ignore */}
-
             <IconButton size="sm" color="gray" variant="text">
               <i className="fa-brands fa-github text-lg" />
             </IconButton>
           </div>
         </div>
         {/* @ts-ignore */}
-
         <Typography
           color="blue-gray"
           className="text-center mt-12 font-normal !text-gray-700"
