@@ -20,6 +20,7 @@ const NAV_MENU = [
   {
     name: "Inicio",
     icon: RectangleStackIcon,
+    href: "/"
   },
   {
     name: "Docs",
