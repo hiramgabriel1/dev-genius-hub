@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Typography,
@@ -10,6 +10,7 @@ import {
 } from "@material-tailwind/react";
 import { ArrowSmallDownIcon } from "@heroicons/react/24/solid";
 import BlogPostCard from "@/components/blog-post-card";
+import toast from "react-hot-toast";
 
 const POSTS = [
   {
@@ -20,15 +21,46 @@ const POSTS = [
   },
 ];
 
-const changeContent = async () => {
-  console.log("jdksdj");
-};
-
-const showMorePosts = async () => {
-  console.log("show more posts");
-};
-
 export function Posts() {
+  const [postsFrontend, setPostsFrontend] = useState({});
+  const [postsBackend, setPostsBackend] = useState([]);
+  const [postsFullstack, setPostsFullstack] = useState([]);
+  const [postsTips, setPostsTips] = useState([]);
+  const [postsRandomCode, setPostsRandom] = useState([]);
+
+  const getAllPosts = async () => {
+    try {
+      const api = await fetch("http://localhost:5000/prompts/posts");
+
+      if (!api.ok) toast.error("error al mostrar posts");
+
+      let response = await api.json()
+      setPostsFrontend(response)
+
+    } catch (error) {
+      console.log(error);
+
+      toast.error('error')
+    }
+  };
+
+  const changeContent = async () => {
+    console.log("jdksdj");
+  };
+
+  const showMorePosts = async () => {
+    console.log("show more posts");
+  };
+
+  useEffect(() => {
+    getAllPosts()
+  }, [])
+
+  useEffect(() => {
+    console.log(postsFrontend);
+    
+  }, [postsFrontend])
+
   return (
     <section className="grid min-h-screen place-items-center p-8">
       <Tabs value="trends" className="mx-auto max-w-7xl w-full mb-16 ">
