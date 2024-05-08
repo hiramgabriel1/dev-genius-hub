@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -39,6 +38,7 @@ export function Posts() {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const filterDataContent = async () => {
     if (!posts) return;
 
@@ -78,7 +78,7 @@ export function Posts() {
 
   useEffect(() => {
     filterDataContent();
-  }, [posts]);
+  }, [filterDataContent, posts]);
 
   return (
     <section className="grid min-h-screen place-items-center p-8">
@@ -86,13 +86,6 @@ export function Posts() {
         <div className="w-full flex mb-8 flex-col items-center">
           {/* @ts-ignore */}
           <TabsHeader className="h-10 !w-12/12 md:w-[50rem] border border-white/25 bg-opacity-90">
-            {/* @ts-ignore */}
-
-            {/* <Tab value="trends" onClick={() => handleChangeContent("daily")}>
-              Diario
-            </Tab>
-            {/* @ts-ignore */}
-
             {/* @ts-ignore */}
             <Tab
               value="frontend"
