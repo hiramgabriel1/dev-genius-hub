@@ -12,21 +12,13 @@ import { ArrowSmallDownIcon } from "@heroicons/react/24/solid";
 import BlogPostCard from "@/components/blog-post-card";
 import toast from "react-hot-toast";
 
-const POSTS = [
-  {
-    img: `/image/blogs/blog2.svg`,
-    tag: "Enterprise",
-    title: "The key new features and changes in Tailwind CSS",
-    desc: "Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens bed design but the back is too high for the beams and angle of the ceiling I also wanted to point out.",
-  },
-];
-
 export function Posts() {
-  const [postsFrontend, setPostsFrontend] = useState({});
+  const [posts, setPosts] = useState<any>();
+  const [postsFrontend, setPostsFrontend] = useState<any>([]);
   const [postsBackend, setPostsBackend] = useState([]);
   const [postsFullstack, setPostsFullstack] = useState([]);
   const [postsTips, setPostsTips] = useState([]);
-  const [postsRandomCode, setPostsRandom] = useState([]);
+  const [postsHelper, setPostsHelper] = useState([]);
 
   const getAllPosts = async () => {
     try {
@@ -34,14 +26,31 @@ export function Posts() {
 
       if (!api.ok) toast.error("error al mostrar posts");
 
-      let response = await api.json()
-      setPostsFrontend(response)
-
+      let response = await api.json();
+      setPosts(response);
     } catch (error) {
       console.log(error);
 
-      toast.error('error')
+      toast.error("error");
     }
+  };
+
+  const filterDataContent = async () => {
+    if(!posts) return
+
+    const filterPostsFrontend = posts.frontendPosts;
+    const filterPostsBackend = posts.backendPosts;
+    const filterPostsFullstack = posts.fullstackPosts;
+    const filterPostsTips = posts.tipPost;
+    const filterPostsHelper = posts.helperPost;
+
+    console.log(filterPostsFrontend);
+
+    setPostsFrontend(filterPostsFrontend);
+    setPostsBackend(filterPostsBackend);
+    setPostsFullstack(filterPostsFullstack);
+    setPostsTips(filterPostsTips);
+    setPostsHelper(filterPostsHelper);
   };
 
   const changeContent = async () => {
@@ -53,13 +62,13 @@ export function Posts() {
   };
 
   useEffect(() => {
-    getAllPosts()
-  }, [])
+    getAllPosts();
+  }, []);
 
   useEffect(() => {
-    console.log(postsFrontend);
-    
-  }, [postsFrontend])
+    console.log(posts);
+    filterDataContent();
+  }, [posts]);
 
   return (
     <section className="grid min-h-screen place-items-center p-8">
@@ -107,19 +116,18 @@ export function Posts() {
         Observa los nuevo posts de hoy creados 100% por inteligencia artificial
       </Typography>
       <div className="container my-auto grid grid-cols-1 gap-x-8 gap-y-16 items-start lg:grid-cols-3">
-        {POSTS.map(({ img, tag, title, desc }) => (
+        {postsFrontend.map((data: any, index: number) => (
           // @ts-ignore
           <BlogPostCard
-            key={title}
-            img={img}
-            tag={tag}
-            title={title}
-            desc={desc}
+            key={index}
+            img="/image/blogs/blog2.svg"
+            tag={data.typePost}
+            title={data.titlePost}
+            desc={data.descriptionPost}
           />
         ))}
       </div>
       {/* @ts-ignore */}
-
       <Button
         variant="text"
         size="lg"
