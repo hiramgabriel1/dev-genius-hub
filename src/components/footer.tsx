@@ -13,19 +13,41 @@ const LINKS = ["Company", "About Us", "Team", "Products", "Blog"];
 export function Footer() {
   const [email, setEmail] = useState("");
 
-  // const getEmailUser = (e: Event) => {
-  //   // @ts-ignore
-  //   const email = e.target.value;
+  const handleInputQuest = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const question = e.target.value;
 
-  //   setEmail(email);
-  // };
-
-  const saveEmailNewsLatter = async () => {
-    toast.error("Hola, aún sigo trabajando en lo de los emails xd");
+    if (question == " ") {
+      toast.error("Epa, llena el input papi");
+    } else {
+      setEmail(question.toLowerCase());
+    }
   };
 
-  console.log(email);
+  const subscribe = async () => {
+    try {
+      const sender = await fetch(
+        "https://devgeniushub-api-production.up.railway.app/emails/saveEmail",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: email }),
+        }
+      );
 
+      if (!sender.ok) {
+        toast.error("Error, intenta despues");
+        return;
+      } else {
+        toast.success(
+          "Recibiras emails diarios. Gracias por tu confianza guap(@) :)"
+        );
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <footer className="pb-5 p-10 md:pt-10">
       <div className="container flex flex-col mx-auto">
@@ -49,7 +71,7 @@ export function Footer() {
               {/* @ts-ignore */}
               <Input
                 // @ts-ignore
-                onChange={(e: Event) => setEmail(e.target.value)}
+                onChange={handleInputQuest}
                 label="Email"
                 color="white"
               />
@@ -57,7 +79,7 @@ export function Footer() {
             </div>
             {/* @ts-ignore */}
             <Button
-              onClick={saveEmailNewsLatter}
+              onClick={subscribe}
               size="md"
               className="lg:w-32"
               fullWidth

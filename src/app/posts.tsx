@@ -151,7 +151,7 @@ export function Posts() {
             // @ts-ignore
             <BlogPostCard
               key={index}
-              img="/image/blogs/blog2.svg"
+              img="/frontendCard.jpg"
               tag={data.typePost}
               title={data.titlePost}
               desc={data.descriptionPost}
