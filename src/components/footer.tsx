@@ -155,7 +155,7 @@ export function Footer() {
           className="text-center mt-12 font-normal !text-gray-700"
         >
           &copy; {CURRENT_YEAR} Created By{" "}
-          <a href="https://www.creative-tim.com" target="_blank">
+          <a href="https://www.instagram.com/hiram.dev" target="_blank">
             @hiram.dev
           </a>
           .
