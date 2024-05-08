@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import { Button, Typography, Input } from "@material-tailwind/react";
+import toast, { Toaster } from "react-hot-toast";
 
 function Hero() {
   return (
@@ -38,10 +39,12 @@ function Hero() {
             Ver los{" "}
             <a
               href="#"
+              onClick={()=> toast('hola xd')}
               className="hover:text-gray-900 transition-colors underline"
             >
               Terminos y Condiciones de uso
             </a>
+            <Toaster/>
           </Typography>
         </div>
       </div>
