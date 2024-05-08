@@ -88,10 +88,10 @@ export function Posts() {
           <TabsHeader className="h-10 !w-12/12 md:w-[50rem] border border-white/25 bg-opacity-90">
             {/* @ts-ignore */}
 
-            <Tab value="trends" onClick={() => handleChangeContent("daily")}>
+            {/* <Tab value="trends" onClick={() => handleChangeContent("daily")}>
               Diario
             </Tab>
-            {/* {/* @ts-ignore */}
+            {/* @ts-ignore */}
 
             {/* @ts-ignore */}
             <Tab
@@ -113,16 +113,14 @@ export function Posts() {
             >
               FullStack
             </Tab>
-            {/* @ts-ignore */}
 
-            <Tab value="tips" onClick={() => handleChangeContent("tips")}>
+            {/* <Tab value="tips" onClick={() => handleChangeContent("tips")}>
               Consejos
             </Tab>
-            {/* @ts-ignore */}
 
             <Tab value="helper" onClick={() => handleChangeContent("helper")}>
               Ejemplos
-            </Tab>
+            </Tab> */}
           </TabsHeader>
         </div>
       </Tabs>
@@ -160,10 +158,25 @@ export function Posts() {
             />
           ))
         ) : (
-          // @ts-ignore
-          <Typography variant="body" className="text-center">
-            No hay posts disponibles.
-          </Typography>
+          <>
+            {currentPostRender === "tips" && postsTips.length > 0 ? (
+              postsTips.map((data: any, index: number) => (
+                // @ts-ignore
+                <BlogPostCard
+                  key={index}
+                  img={foto}
+                  tag={data.typePost}
+                  title={data.title}
+                  desc={data.descripcion}
+                />
+              ))
+            ) : (
+              // @ts-ignore
+              <Typography variant="body" className="text-center">
+                Selecciona una categoria.
+              </Typography>
+            )}
+          </>
         )}
       </div>
 
