@@ -40,10 +40,9 @@ function HeroQuestions() {
     };
 
     useEffect(() => {
-        if (answer !== null || answer !== " ") setRender(false);
-
-        console.log(render);
-        console.log(answer);
+        if (answer !== null || answer !== " ") {
+            toast.success("Respuesta procesada correctamente");
+        }
     }, [answer]);
 
     return (
