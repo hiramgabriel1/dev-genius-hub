@@ -16,7 +16,8 @@
     "next": "13.4.0",
     "react": "18",
     "react-dom": "18",
-    "react-hot-toast": "^2.4.1"
+    "react-hot-toast": "^2.4.1",
+    "sweetalert2": "^11.10.8"
   },
   "devDependencies": {
     "@types/node": "20",

@@ -15,12 +15,14 @@ import {
   QueueListIcon,
   QuestionMarkCircleIcon,
 } from "@heroicons/react/24/solid";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const NAV_MENU = [
   {
     name: "Inicio",
     icon: RectangleStackIcon,
-    href: "/"
+    href: "/",
   },
   {
     name: "Docs",
@@ -100,7 +102,18 @@ export function Navbar() {
         </ul>
         <div className="hidden items-center gap-2 lg:flex">
           {/* @ts-ignore */}
-          <Button variant="text">Acerca de</Button>
+          <Button
+            variant="text"
+            onClick={() =>
+              Swal.fire({
+                icon: "info",
+                title: "acerca de",
+                text: "este proyecto fue creado por @hiram.dev con la intencion de apoyar a las personas que estan interesadas en aprender prog o encontrar ideas de proyectos diferentes",
+              })
+            }
+          >
+            Acerca de
+          </Button>
           <a href="#">
             {/* @ts-ignore */}
 
