@@ -39,11 +39,11 @@ function HeroQuestions() {
         }
     };
 
-    useEffect(() => {
-        if (answer !== null || answer !== " ") {
-            toast.success("Respuesta procesada correctamente");
-        }
-    }, [answer]);
+    // useEffect(() => {
+    //     if (answer !== null || answer !== " ") {
+    //         toast.success("Respuesta procesada correctamente");
+    //     }
+    // }, [answer]);
 
     return (
         <>
