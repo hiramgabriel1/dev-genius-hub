@@ -7,31 +7,38 @@ import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
 
 function Hero() {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
 
   const handleInputQuest = (e: React.ChangeEvent<HTMLInputElement>) => {
     const question = e.target.value;
-    setEmail(question);
+
+    if (question == " ") {
+      toast.error("Epa, llena el input papi");
+    } else {
+      setEmail(question.toLowerCase());
+    }
   };
 
   const subscribe = async () => {
     try {
-      const sender = await fetch('http://localhost:5000/emails/saveEmail', {
-        method: 'POST',
+      const sender = await fetch("http://localhost:5000/emails/saveEmail", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email: email })
-      })
+        body: JSON.stringify({ email: email }),
+      });
 
-      if (!sender.ok) toast('error, intenta despues')
-
-      toast.success('email recibido')
-      console.log(sender);
+      if (!sender.ok) {
+        toast.error("Error, intenta despues");
+        return;
+      } else {
+        toast.success("Recibiras emails diarios. Gracias por tu confianza guap(@) :)");
+      }
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-  }
+  };
 
   return (
     <header className="mt-5 bg-white p-8">
