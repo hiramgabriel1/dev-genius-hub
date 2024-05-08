@@ -158,7 +158,7 @@ export function Posts() {
             />
           ))
         ) : (
-          <>
+          <div>
             {currentPostRender === "tips" && postsTips.length > 0 ? (
               postsTips.map((data: any, index: number) => (
                 // @ts-ignore
@@ -176,7 +176,7 @@ export function Posts() {
                 Selecciona una categoria.
               </Typography>
             )}
-          </>
+          </div>
         )}
       </div>
 
