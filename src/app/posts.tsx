@@ -12,6 +12,7 @@ import {
 import { ArrowSmallDownIcon } from "@heroicons/react/24/solid";
 import BlogPostCard from "@/components/blog-post-card";
 import toast from "react-hot-toast";
+
 export function Posts() {
   const [posts, setPosts] = useState<any>();
   const [currentPostRender, setCurrentPostRender] = useState<any>(null);
@@ -86,9 +87,9 @@ export function Posts() {
           <TabsHeader className="h-10 !w-12/12 md:w-[50rem] border border-white/25 bg-opacity-90">
             {/* @ts-ignore */}
 
-            <Tab value="trends" onClick={() => handleChangeContent("daily")}>
+            {/* <Tab value="trends" onClick={() => handleChangeContent("daily")}>
               Diario
-            </Tab>
+            </Tab> */}
             {/* @ts-ignore */}
 
             <Tab
