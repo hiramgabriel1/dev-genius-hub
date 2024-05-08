@@ -100,7 +100,7 @@ export function Footer() {
           {/* @ts-ignore */}
           <Typography
             as="a"
-            href="https://www.material-tailwind.com"
+            href="https://www.instagram.com/hiram.dev"
             target="_blank"
             variant="h6"
             className="text-gray-900"

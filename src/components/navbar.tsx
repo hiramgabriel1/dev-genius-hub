@@ -8,14 +8,11 @@ import {
 } from "@material-tailwind/react";
 import {
   RectangleStackIcon,
-  UserCircleIcon,
   CommandLineIcon,
   XMarkIcon,
   Bars3Icon,
-  QueueListIcon,
   QuestionMarkCircleIcon,
 } from "@heroicons/react/24/solid";
-import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
 const NAV_MENU = [
