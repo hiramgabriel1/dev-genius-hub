@@ -27,7 +27,7 @@ const NAV_MENU = [
   {
     name: "Docs",
     icon: CommandLineIcon,
-    href: "",
+    href: "https://github.com/itsrusty",
   },
   {
     name: "AI",
