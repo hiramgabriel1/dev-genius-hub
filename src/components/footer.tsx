@@ -8,7 +8,7 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 
 const CURRENT_YEAR = new Date().getFullYear();
-const LINKS = ["Company", "About Us", "Team", "Products", "Blog"];
+const LINKS = ["Vopper Community", "Asistente", "Creador"];
 
 export function Footer() {
   const [email, setEmail] = useState("");
