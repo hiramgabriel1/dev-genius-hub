@@ -13,8 +13,8 @@ const LINKS = [
     name: "Vopper Community",
     href: "https://chat.whatsapp.com/Jq40THDMFnhBTUSedzcZc4",
   },
-  { name: "Asistente", href: "/questions" },
-  { name: "Creador" },
+  // { name: "Asistente", href: "/questions" },
+  // { name: "Creador" },
 ];
 
 export function Footer() {
@@ -113,7 +113,7 @@ export function Footer() {
                 {/* @ts-ignore */}
                 <Typography
                   as="a"
-                  href={link.href}
+                  href="https://chat.whatsapp.com/Jq40THDMFnhBTUSedzcZc4"
                   target="_blank"
                   variant="small"
                   color="white"
