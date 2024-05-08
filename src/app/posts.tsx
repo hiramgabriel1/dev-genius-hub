@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -19,34 +20,6 @@ export function Posts() {
   const [postsFullstack, setPostsFullstack] = useState([]);
   const [postsTips, setPostsTips] = useState([]);
   const [postsHelper, setPostsHelper] = useState([]);
-
-  const showCurrentPost = () => {
-    const randomIndex = Math.floor(Math.random() * postsFrontend.length);
-    const selectedFrontendPosts = postsFrontend.slice(
-      randomIndex,
-      randomIndex + 2
-    );
-    const selectedBackendPosts = postsBackend.slice(
-      randomIndex,
-      randomIndex + 2
-    );
-    const selectedFullstackPosts = postsFullstack.slice(
-      randomIndex,
-      randomIndex + 2
-    );
-    const selectedTipsPosts = postsTips.slice(randomIndex, randomIndex + 2);
-    const selectedHelperPosts = postsHelper.slice(randomIndex, randomIndex + 2);
-
-    const joinPosts = [
-      ...selectedFrontendPosts,
-      ...selectedBackendPosts,
-      ...selectedFullstackPosts,
-      ...selectedTipsPosts,
-      ...selectedHelperPosts,
-    ].slice(0, 6);
-
-    setCurrentPostRender(joinPosts);
-  };
 
   const getAllPosts = async () => {
     try {
@@ -103,18 +76,6 @@ export function Posts() {
     filterDataContent();
   }, [posts]);
 
-  useEffect(() => {
-    getAllPosts();
-  }, []);
-
-  useEffect(() => {
-    filterDataContent();
-  }, [posts]);
-
-  useEffect(() => {
-    showCurrentPost();
-  }, [postsFrontend, postsBackend, postsFullstack, postsTips, postsHelper]);
-
   return (
     <section className="grid min-h-screen place-items-center p-8">
       <Tabs value="trends" className="mx-auto max-w-7xl w-full mb-16 ">
@@ -128,10 +89,7 @@ export function Posts() {
             </Tab>
             {/* @ts-ignore */}
 
-            <Tab
-              value="frontend"
-              onClick={() => handleChangeContent("frontend")}
-            >
+            <Tab value="frontend" onClick={() => handleChangeContent("frontend")}>
               Frontend
             </Tab>
             {/* @ts-ignore */}
@@ -141,10 +99,7 @@ export function Posts() {
             </Tab>
             {/* @ts-ignore */}
 
-            <Tab
-              value="fullstack"
-              onClick={() => handleChangeContent("fullstack")}
-            >
+            <Tab value="fullstack" onClick={() => handleChangeContent("fullstack")}>
               FullStack
             </Tab>
             {/* @ts-ignore */}
@@ -216,4 +171,4 @@ export function Posts() {
   );
 }
 
-export default Posts;
+export default Posts
