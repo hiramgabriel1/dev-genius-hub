@@ -21,19 +21,24 @@ function Hero() {
 
   const subscribe = async () => {
     try {
-      const sender = await fetch("http://localhost:5000/emails/saveEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: email }),
-      });
+      const sender = await fetch(
+        "https://devgeniushub-api-production.up.railway.app/emails/saveEmail",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: email }),
+        }
+      );
 
       if (!sender.ok) {
         toast.error("Error, intenta despues");
         return;
       } else {
-        toast.success("Recibiras emails diarios. Gracias por tu confianza guap(@) :)");
+        toast.success(
+          "Recibiras emails diarios. Gracias por tu confianza guap(@) :)"
+        );
       }
     } catch (error) {
       console.error(error);

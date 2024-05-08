@@ -7,7 +7,7 @@ import toast, { Toaster } from "react-hot-toast";
 function HeroQuestions() {
     const [question, setQuestion] = useState<string>("");
     const [answer, setAnswer] = useState<{ response: string }>({ response: "" });
-    const [render, setRender] = useState<boolean>(Boolean)
+    const [render, setRender] = useState<boolean>(Boolean);
 
     const handleInputQuest = (e: React.ChangeEvent<HTMLInputElement>) => {
         const question = e.target.value;
@@ -15,30 +15,33 @@ function HeroQuestions() {
     };
 
     const handleQuestionAI = async () => {
-        setRender(true)
-        toast('Procesando respuesta...');
+        setRender(true);
+        toast("Procesando respuesta...");
         try {
-            const API = await fetch('http://localhost:5000/assistant', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ question: question })
-            });
+            const API = await fetch(
+                "https://devgeniushub-api-production.up.railway.app/assistant",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ question: question }),
+                }
+            );
 
-            if (!API.ok) throw new Error('Error al procesar tu pregunta');
+            if (!API.ok) throw new Error("Error al procesar tu pregunta");
 
             const response = await API.json();
             setAnswer(response);
         } catch (error) {
-            toast.error('Hubo un error al procesar tu respuesta');
+            toast.error("Hubo un error al procesar tu respuesta");
             console.error(error);
         }
     };
 
     useEffect(() => {
-        if (answer !== null || answer !== " ") setRender(false)
-            
+        if (answer !== null || answer !== " ") setRender(false);
+
         console.log(render);
         console.log(answer);
     }, [answer]);

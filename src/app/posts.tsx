@@ -23,7 +23,9 @@ export function Posts() {
 
   const getAllPosts = async () => {
     try {
-      const api = await fetch("http://localhost:5000/prompts/posts");
+      const api = await fetch(
+        "https://devgeniushub-api-production.up.railway.app/prompts/posts"
+      );
 
       if (!api.ok) toast.error("error al mostrar posts");
 
@@ -89,7 +91,10 @@ export function Posts() {
             </Tab>
             {/* @ts-ignore */}
 
-            <Tab value="frontend" onClick={() => handleChangeContent("frontend")}>
+            <Tab
+              value="frontend"
+              onClick={() => handleChangeContent("frontend")}
+            >
               Frontend
             </Tab>
             {/* @ts-ignore */}
@@ -99,7 +104,10 @@ export function Posts() {
             </Tab>
             {/* @ts-ignore */}
 
-            <Tab value="fullstack" onClick={() => handleChangeContent("fullstack")}>
+            <Tab
+              value="fullstack"
+              onClick={() => handleChangeContent("fullstack")}
+            >
               FullStack
             </Tab>
             {/* @ts-ignore */}
@@ -162,7 +170,7 @@ export function Posts() {
         size="lg"
         color="gray"
         className="flex items-center gap-2 mt-24"
-      // onClick={showMorePosts}
+        // onClick={showMorePosts}
       >
         <ArrowSmallDownIcon className="h-5 w-5 font-bold text-gray-900" />
         Ver más
@@ -171,4 +179,4 @@ export function Posts() {
   );
 }
 
-export default Posts
+export default Posts;
