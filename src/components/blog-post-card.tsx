@@ -9,7 +9,7 @@ import {
 } from "@material-tailwind/react";
 
 interface BlogPostCardProps {
-  img: string;
+  img: any;
   tag: string;
   title: string;
   desc: string;

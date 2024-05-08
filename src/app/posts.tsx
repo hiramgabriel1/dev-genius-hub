@@ -12,6 +12,7 @@ import {
 import { ArrowSmallDownIcon } from "@heroicons/react/24/solid";
 import BlogPostCard from "@/components/blog-post-card";
 import toast from "react-hot-toast";
+import foto from "../../public/image/foto.png";
 
 export function Posts() {
   const [posts, setPosts] = useState<any>();
@@ -87,11 +88,12 @@ export function Posts() {
           <TabsHeader className="h-10 !w-12/12 md:w-[50rem] border border-white/25 bg-opacity-90">
             {/* @ts-ignore */}
 
-            {/* <Tab value="trends" onClick={() => handleChangeContent("daily")}>
+            <Tab value="trends" onClick={() => handleChangeContent("daily")}>
               Diario
-            </Tab> */}
-            {/* @ts-ignore */}
+            </Tab>
+            {/* {/* @ts-ignore */}
 
+            {/* @ts-ignore */}
             <Tab
               value="frontend"
               onClick={() => handleChangeContent("frontend")}
@@ -151,7 +153,7 @@ export function Posts() {
             // @ts-ignore
             <BlogPostCard
               key={index}
-              img="/frontendCard.jpg"
+              img={foto}
               tag={data.typePost}
               title={data.titlePost}
               desc={data.descriptionPost}
@@ -171,7 +173,7 @@ export function Posts() {
         size="lg"
         color="gray"
         className="flex items-center gap-2 mt-24"
-        // onClick={showMorePosts}
+        onClick={() => toast.error("no hay mas contenido aun xd")}
       >
         <ArrowSmallDownIcon className="h-5 w-5 font-bold text-gray-900" />
         Ver más
