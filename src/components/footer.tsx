@@ -8,7 +8,14 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 
 const CURRENT_YEAR = new Date().getFullYear();
-const LINKS = ["Vopper Community", "Asistente", "Creador"];
+const LINKS = [
+  {
+    name: "Vopper Community",
+    href: "https://chat.whatsapp.com/Jq40THDMFnhBTUSedzcZc4",
+  },
+  { name: "Asistente", href: "/questions" },
+  { name: "Creador" },
+];
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -106,12 +113,13 @@ export function Footer() {
                 {/* @ts-ignore */}
                 <Typography
                   as="a"
-                  href="#"
+                  href={link.href}
+                  target="_blank"
                   variant="small"
                   color="white"
                   className="font-normal !text-gray-700 hover:!text-gray-900 transition-colors"
                 >
-                  {link}
+                  {link.name}
                 </Typography>
               </li>
             ))}
