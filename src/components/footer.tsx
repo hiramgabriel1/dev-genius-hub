@@ -37,7 +37,7 @@ export function Footer() {
       );
 
       if (!sender.ok) {
-        toast.error("Error, intenta despues");
+        toast.error("Prueba con otro correo");
         return;
       } else {
         toast.success(
