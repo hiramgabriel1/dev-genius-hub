@@ -14,6 +14,8 @@ import toast from "react-hot-toast";
 
 export function Posts() {
   const [posts, setPosts] = useState<any>();
+  const [dailyPost, setDailyPost] = useState<any>();
+  const [currentPostRender, setCurrentPostRender] = useState<any>();
   const [postsFrontend, setPostsFrontend] = useState<any>([]);
   const [postsBackend, setPostsBackend] = useState([]);
   const [postsFullstack, setPostsFullstack] = useState([]);
@@ -36,7 +38,7 @@ export function Posts() {
   };
 
   const filterDataContent = async () => {
-    if(!posts) return
+    if (!posts) return;
 
     const filterPostsFrontend = posts.frontendPosts;
     const filterPostsBackend = posts.backendPosts;
@@ -53,8 +55,33 @@ export function Posts() {
     setPostsHelper(filterPostsHelper);
   };
 
-  const changeContent = async () => {
-    console.log("jdksdj");
+  const handleChangeContent = async (
+    daily: boolean,
+    frontend: boolean,
+    backend: boolean,
+    fullstack: boolean,
+    tips: boolean,
+    random: boolean
+  ) => {
+    const params: { [key: string]: boolean } = {
+      daily,
+      frontend,
+      backend,
+      fullstack,
+      tips,
+      random,
+    };
+
+    for (const paramName in params) {
+      if (params[paramName]) {
+        setCurrentPostRender(paramName);
+        console.log(paramName);
+        return paramName;
+      }
+    }
+
+    if (currentPostRender === "daily")
+      console.log("renderizar 6 posts solamente");
   };
 
   const showMorePosts = async () => {
@@ -70,6 +97,10 @@ export function Posts() {
     filterDataContent();
   }, [posts]);
 
+  useEffect(() => {
+    console.log(currentPostRender);
+  }, [currentPostRender]);
+
   return (
     <section className="grid min-h-screen place-items-center p-8">
       <Tabs value="trends" className="mx-auto max-w-7xl w-full mb-16 ">
@@ -78,21 +109,64 @@ export function Posts() {
           <TabsHeader className="h-10 !w-12/12 md:w-[50rem] border border-white/25 bg-opacity-90">
             {/* @ts-ignore */}
 
-            <Tab value="trends" onClick={changeContent}>
+            <Tab
+              value="trends"
+              onClick={() =>
+                handleChangeContent(true, false, false, false, false, false)
+              }
+            >
               Diario
             </Tab>
             {/* @ts-ignore */}
 
-            <Tab value="frontend">Frontend</Tab>
+            <Tab
+              value="frontend"
+              onClick={() =>
+                handleChangeContent(false, true, false, false, false, false)
+              }
+            >
+              Frontend
+            </Tab>
             {/* @ts-ignore */}
 
-            <Tab value="backend">Backend</Tab>
+            <Tab
+              value="backend"
+              onClick={() =>
+                handleChangeContent(false, false, true, false, false, false)
+              }
+            >
+              Backend
+            </Tab>
             {/* @ts-ignore */}
 
-            <Tab value="ai">Tips</Tab>
+            <Tab
+              value="fullstack"
+              onClick={() =>
+                handleChangeContent(false, false, false, true, false, false)
+              }
+            >
+              FullStack
+            </Tab>
             {/* @ts-ignore */}
 
-            <Tab value="tools">Ejemplos</Tab>
+            <Tab
+              value="consejos"
+              onClick={() =>
+                handleChangeContent(false, false, false, false, true, false)
+              }
+            >
+              Consejos
+            </Tab>
+
+            {/* @ts-ignore */}
+            <Tab
+              value="examples"
+              onClick={() =>
+                handleChangeContent(false, false, false, false, false, true)
+              }
+            >
+              Ejemplos
+            </Tab>
           </TabsHeader>
         </div>
       </Tabs>
