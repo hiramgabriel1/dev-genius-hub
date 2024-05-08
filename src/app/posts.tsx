@@ -15,7 +15,7 @@ import toast from "react-hot-toast";
 export function Posts() {
   const [posts, setPosts] = useState<any>();
   const [dailyPost, setDailyPost] = useState<any>();
-  const [currentPostRender, setCurrentPostRender] = useState<any>();
+  const [currentPostRender, setCurrentPostRender] = useState<any>([]);
   const [postsFrontend, setPostsFrontend] = useState<any>([]);
   const [postsBackend, setPostsBackend] = useState([]);
   const [postsFullstack, setPostsFullstack] = useState([]);
@@ -63,6 +63,7 @@ export function Posts() {
     tips: boolean,
     random: boolean
   ) => {
+
     const params: { [key: string]: boolean } = {
       daily,
       frontend,
@@ -89,6 +90,7 @@ export function Posts() {
   };
 
   useEffect(() => {
+    setCurrentPostRender(posts)
     getAllPosts();
   }, []);
 
@@ -190,17 +192,25 @@ export function Posts() {
         Observa los nuevo posts de hoy creados 100% por inteligencia artificial
       </Typography>
       <div className="container my-auto grid grid-cols-1 gap-x-8 gap-y-16 items-start lg:grid-cols-3">
-        {postsFrontend.map((data: any, index: number) => (
-          // @ts-ignore
-          <BlogPostCard
-            key={index}
-            img="/image/blogs/blog2.svg"
-            tag={data.typePost}
-            title={data.titlePost}
-            desc={data.descriptionPost}
-          />
-        ))}
+        {postsFullstack.length > 0 ? (
+          postsFullstack.map((data: any, index: number) => (
+            // @ts-ignore
+            <BlogPostCard
+              key={index}
+              img="/image/blogs/blog2.svg"
+              tag={data.typePost}
+              title={data.titlePost}
+              desc={data.descriptionPost}
+            />
+          ))
+        ) : (
+            // @ts-ignore
+          <Typography variant="body" className="text-center">
+            No hay posts disponibles.
+          </Typography>
+        )}
       </div>
+
       {/* @ts-ignore */}
       <Button
         variant="text"
