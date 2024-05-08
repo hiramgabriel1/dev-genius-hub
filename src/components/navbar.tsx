@@ -19,7 +19,7 @@ const NAV_MENU = [
   {
     name: "Inicio",
     icon: RectangleStackIcon,
-    href: "/",
+    href: "https://www.devgeniushub.site/",
   },
   {
     name: "Docs",
